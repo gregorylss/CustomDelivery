@@ -25,6 +25,10 @@
             <argument type="service" id="request_stack"/>
             <tag name="kernel.event_subscriber"/>
         </service>
+
+        <service id="custom.delivery.listener" class="CustomDelivery\EventListeners\ConfigListener">
+            <tag name="kernel.event_subscriber" event="module.config" method="onModuleConfig"/>
+        </service>
     </services>
 
     <hooks>
